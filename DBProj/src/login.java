@@ -53,7 +53,7 @@ public class login extends Stage {
                     message.setTextFill( Color.rgb( 210, 39, 30 ) );
                 } else {
                     hide();
-                    new DBMainMenu();
+                    new CourseEntryGUI();
                 }
                 user.clear( );
                 pb.clear( );
