@@ -1,7 +1,6 @@
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -15,45 +14,71 @@ public class CourseEntryGUI extends Stage {
     Scene scene = new Scene( gp, 1920, 1080 );
     final Label message = new Label( "" );
 
-    VBox vbProfName = new VBox();
+    VBox vbProfFirstName = new VBox();
+    VBox vbProfLastName= new VBox();
+    VBox vbProfTitle = new VBox();
     VBox vbCourseTitle = new VBox();
     VBox vbDepartment = new VBox();
     VBox vbCourseNumber = new VBox();
     VBox vbCRN = new VBox();
     VBox vbSemester = new VBox();
     VBox vbYear = new VBox();
+    VBox vbNotes = new VBox();
 
-    HBox hbProfName = new HBox();
+    HBox hbProfFirstName = new HBox();
+    HBox hbProfLastName = new HBox();
+    HBox hbProfTitle = new HBox();
     HBox hbCourseTitle = new HBox();
     HBox hbDepartment = new HBox();
     HBox hbCourseNumber = new HBox();
     HBox hbCRN = new HBox();
     HBox hbSemester = new HBox();
     HBox hbYear = new HBox();
+    HBox hbNotes = new HBox();
 
-    Label lblProfName = new Label( "Name of Professor" );
+    Label lblProfFirstName = new Label( "First Name of Instructor" );
+    Label lblProfLastName = new Label( "Last Name of Instructor" );
+    Label lblProfTitle = new Label( "Instructor Title" );
     Label lblCourseTitle = new Label( "Official Course Title" );
     Label lblDepartment = new Label( "Department" );
     Label lblCourseNumber = new Label( "Course Number" );
     Label lblCRN = new Label( "CRN" );
     Label lblSemester = new Label( "Semester" );
     Label lblYear = new Label( "Year" );
+    Label lblNotes = new Label( "Notes" );
 
-    final TextField tfProfName = new TextField( );
+    final TextField tfProfFirstName = new TextField( );
+    final TextField tfProfLastName = new TextField( );
+    final TextField tfProfTitle = new TextField( );
     final TextField tfCourseTitle = new TextField( );
     final TextField tfDepartment = new TextField( );
     final TextField tfCourseNumber = new TextField( );
     final TextField tfCRN = new TextField( );
     final TextField tfSemester = new TextField( );
     final TextField tfYear = new TextField( );
+    final TextField tfNotes = new TextField( );
 
     CourseEntryGUI( ) {
-        vbProfName.setPadding( new Insets( 10, 7, 0, 10 ) );
-        vbProfName.setSpacing( 10 );
-        hbProfName.setSpacing( 10 );
-        hbProfName.setAlignment( Pos.CENTER_LEFT );
-        hbProfName.getChildren().addAll( lblProfName, tfProfName );
-        vbProfName.getChildren().addAll( hbProfName );
+        vbProfFirstName.setPadding( new Insets( 10, 7, 0, 10 ) );
+        vbProfFirstName.setSpacing( 10 );
+        hbProfFirstName.setSpacing( 10 );
+        hbProfFirstName.setAlignment( Pos.CENTER_LEFT );
+        hbProfFirstName.getChildren().addAll(lblProfFirstName, tfProfFirstName);
+        vbProfFirstName.getChildren().addAll(hbProfFirstName);
+
+        vbProfLastName.setPadding( new Insets( 10, 7, 0, 10 ) );
+        vbProfLastName.setSpacing( 10 );
+        hbProfLastName.setSpacing( 10 );
+        hbProfLastName.setAlignment( Pos.CENTER_LEFT );
+        hbProfLastName.getChildren().addAll( lblProfLastName, tfProfLastName );
+        vbProfLastName.getChildren().addAll( hbProfLastName );
+
+        vbProfTitle.setPadding( new Insets( 10, 7, 0, 10 ) );
+        vbProfTitle.setSpacing( 10 );
+        hbProfTitle.setSpacing( 10 );
+        hbProfTitle.setAlignment( Pos.CENTER_LEFT );
+        hbProfTitle.getChildren().addAll( lblProfTitle, tfProfTitle );
+        vbProfTitle.getChildren().addAll( hbProfTitle );
 
         vbCourseTitle.setPadding( new Insets( 10, 7, 0, 10 ) );
         vbCourseTitle.setSpacing( 10 );
@@ -97,13 +122,23 @@ public class CourseEntryGUI extends Stage {
         hbYear.getChildren().addAll( lblYear, tfYear );
         vbYear.getChildren().addAll( hbYear );
 
-        gp.add( vbProfName, 1, 0 );
-        gp.add( vbCourseTitle, 1, 1 );
-        gp.add( vbDepartment, 1, 2 );
-        gp.add( vbCourseNumber, 1, 3 );
-        gp.add( vbCRN, 1, 4 );
-        gp.add( vbSemester, 1, 5 );
-        gp.add( vbYear, 1, 6 );
+        vbNotes.setPadding( new Insets( 10, 7, 0, 10 ) );
+        vbNotes.setSpacing( 10 );
+        hbNotes.setSpacing( 10 );
+        hbNotes.setAlignment( Pos.CENTER_LEFT );
+        hbNotes.getChildren().addAll( lblNotes, tfNotes );
+        vbNotes.getChildren().addAll( hbNotes );
+
+        gp.add(vbProfFirstName, 1, 0 );
+        gp.add( vbProfLastName, 1, 1 );
+        gp.add( vbProfTitle, 1, 2 );
+        gp.add( vbCourseTitle, 1, 3 );
+        gp.add( vbDepartment, 1, 4 );
+        gp.add( vbCourseNumber, 1, 5 );
+        gp.add( vbCRN, 1, 6 );
+        gp.add( vbSemester, 1, 7 );
+        gp.add( vbYear, 1, 8 );
+        gp.add( vbNotes, 1, 9 );
 
         this.setScene( scene );
         this.show();
