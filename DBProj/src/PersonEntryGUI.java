@@ -1,6 +1,7 @@
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
@@ -12,6 +13,11 @@ public class PersonEntryGUI extends Stage {
     GridPane gp = new GridPane();
     Scene scene = new Scene( gp, 1920, 1080 );
     final Label message = new Label( "" );
+
+    Button btnCancel = new Button( "Cancel" );
+    Button btnClear = new Button( "Clear" );
+    Button btnDownload = new Button( "Download" );
+    Button btnSubmit = new Button( "Submit" );
 
     VBox vbFirstName = new VBox();
     VBox vbMiddleName = new VBox();
@@ -306,6 +312,11 @@ public class PersonEntryGUI extends Stage {
         gp.add( vbUsername, 1, 7 );
         gp.add( vbPassword, 2, 7 );
         gp.add( vbSocialMedia, 3, 7 );
+
+        gp.add( btnSubmit, 16, 16 );
+        gp.add( btnDownload, 17, 16 );
+        gp.add( btnClear, 18, 16 );
+        gp.add( btnCancel, 19, 16 );
 
         this.setScene( scene );
         this.show();

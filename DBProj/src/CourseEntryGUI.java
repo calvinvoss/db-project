@@ -1,5 +1,6 @@
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -13,6 +14,11 @@ public class CourseEntryGUI extends Stage {
     GridPane gp = new GridPane();
     Scene scene = new Scene( gp, 1920, 1080 );
     final Label message = new Label( "" );
+
+    Button btnCancel = new Button( "Cancel" );
+    Button btnClear = new Button( "Clear" );
+    Button btnDownload = new Button( "Download" );
+    Button btnSubmit = new Button( "Submit" );
 
     VBox vbProfFirstName = new VBox();
     VBox vbProfLastName= new VBox();
@@ -139,6 +145,11 @@ public class CourseEntryGUI extends Stage {
         gp.add( vbSemester, 1, 7 );
         gp.add( vbYear, 1, 8 );
         gp.add( vbNotes, 1, 9 );
+
+        gp.add( btnSubmit, 16, 16 );
+        gp.add( btnDownload, 17, 16 );
+        gp.add( btnClear, 18, 16 );
+        gp.add( btnCancel, 19, 16 );
 
         this.setScene( scene );
         this.show();
