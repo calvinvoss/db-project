@@ -1,3 +1,5 @@
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -135,7 +137,7 @@ public class CourseEntryGUI extends Stage {
         hbNotes.getChildren().addAll( lblNotes, tfNotes );
         vbNotes.getChildren().addAll( hbNotes );
 
-        gp.add(vbProfFirstName, 1, 0 );
+        gp.add( vbProfFirstName, 1, 0 );
         gp.add( vbProfLastName, 1, 1 );
         gp.add( vbProfTitle, 1, 2 );
         gp.add( vbCourseTitle, 1, 3 );
@@ -153,6 +155,30 @@ public class CourseEntryGUI extends Stage {
 
         this.setScene( scene );
         this.show();
+
+        btnClear.setOnAction( new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                tfProfFirstName.clear();
+                tfProfLastName.clear();
+                tfProfTitle.clear();
+                tfCourseTitle.clear();
+                tfDepartment.clear();
+                tfCourseNumber.clear();
+                tfCRN.clear();
+                tfSemester.clear();
+                tfYear.clear();
+                tfNotes.clear();
+            }
+        });
+
+        btnCancel.setOnAction( new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                hide();
+                new DBMainMenu();
+            }
+        });
     }
 
 }

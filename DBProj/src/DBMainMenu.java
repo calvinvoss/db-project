@@ -1,3 +1,5 @@
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -7,7 +9,7 @@ import javafx.stage.Stage;
 
 public class DBMainMenu extends Stage {
     GridPane gp = new GridPane();
-    Scene scene = new Scene( gp );
+    Scene scene = new Scene( gp, 1280, 720 );
     final Label message = new Label( "" );
 
     Button btnNewEntry = new Button( "New Entry" );
@@ -28,5 +30,37 @@ public class DBMainMenu extends Stage {
 
         this.setScene( scene );
         this.show();
+
+        btnNewEntry.setOnAction( new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                hide();
+                new EntryChoiceGUI();
+            }
+        });
+
+        btnEdit.setOnAction( new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                hide();
+                new EditEntryChoiceGUI();
+            }
+        });
+
+        btnSearch.setOnAction( new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                hide();
+                new SearchGUI();
+            }
+        });
+
+        btnExit.setOnAction( new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                hide();
+                System.exit( 0 );
+            }
+        });
     }
 }

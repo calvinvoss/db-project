@@ -1,3 +1,5 @@
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -320,5 +322,43 @@ public class PersonEntryGUI extends Stage {
 
         this.setScene( scene );
         this.show();
+
+        btnClear.setOnAction( new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                tfFirstName.clear();
+                tfMiddleName.clear();
+                tfLastName.clear();
+                tfPhoneNumber.clear();
+                tfPhoneType.clear();
+                tfEmail.clear();
+                tfEmailType.clear();
+                tfHeightFeet.clear();
+                tfHeightInches.clear();
+                tfWeight.clear();
+                tfGender.clear();
+                tfEyeColor.clear();
+                tfHairColor.clear();
+                tfHairStyle.clear();
+                tfHairDye.clear();
+                tfEthnicity.clear();
+                tfBuild.clear();
+                tfRelationshipStatus.clear();
+                tfOrientation.clear();
+                tfFriends.clear();
+                tfNotes.clear();
+                tfUsername.clear();
+                tfPassword.clear();
+                tfSocialMedia.clear();
+            }
+        });
+
+        btnCancel.setOnAction( new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                hide();
+                new DBMainMenu();
+            }
+        });
     }
 }
